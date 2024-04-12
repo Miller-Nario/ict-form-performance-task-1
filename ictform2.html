@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pink Cat Questionnaire</title>
+  <style>
+    body { 
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .glow {
+      font-size: 50px;
+      color: #ff4da6;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff4da6;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff4da6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glow">Do YOU love pink cats</h1>
+    <form id="pinkForm"> 
+      <label for="pinkers">First Name</label>
+      <input type="text" placeholder="Input your First name" id="pinkers" required>
+
+      <label for="caters">Last Name</label>
+      <input type="text" placeholder="Input your Last name" id="caters" required>
+
+      <label for="lebonbon">Email Address</label>
+      <input type="text" placeholder="Input your Email Address" id="lebonbon" required>
+
+      <label for="jamz">Password</label>
+      <input type="password" placeholder="Input your password" id="jamz" required>
+
+      <label for="cinnabon">Cat's Name</label>
+      <input type="text" placeholder="Name of The Cat" id="cinnabon" required>
+
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female
+      <input type="radio" name="gender" value="Pink Cat">Pink Cat
+
+      <label for="catsloveu">Type of Cats YOU like</label>
+      <select name="Type of Cats" id="catsloveu">
+        <option value="Leopard">Leopard</option>
+        <option value="Tiger">Tiger</option>
+        <option value="Lion">Lion</option>
+        <option value="Cheetah">Cheetah</option>
+        <option value="Pink Panther">Pink Panther</option>
+        <option value="Any Panther">Any Panther</option>
+        <option value="Persian Cat">Persian Cat</option>
+        <option value="Meowth">Meowth</option>
+        <option value="Stray Cat">Stray Cat</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="sandwitch">What country do you like???</label>
+      <input type="text" placeholder="Favorite Country" id="sandwitch" required>
+
+      <label for="agreed">Fill These to Proceed</label><br>
+      <input type="checkbox" name="agreed" required>Do YOU love pink cats?<br>
+      <input type="checkbox" name="agreed" required>Do YOU accept that you like pink cats<br>
+      <input type="checkbox" name="agreed" required>This are my TRUE opinions<br>
+      <input type="checkbox" name="agreed" required>I agree to not look into the '87 Incident<br>
+      <br>
+
+      <label for="whyLikePinkCats">Why do you like pink cats, if not why</label>
+      <input type="text" id="whyLikePinkCats" required>
+
+      <label for="likePinkCatsColor">Do you like the color of pink cats</label>
+      <input type="text" id="likePinkCatsColor" required>
+
+      <label for="pinkCatLover">Are you a pink cat lover/supporter why</label>
+      <input type="text" id="pinkCatLover" required>
+
+      <label for="pinkCatGoodPets">Do you think pink cats are good pets</label>
+      <input type="text" id="pinkCatGoodPets" required>
+
+      <label for="pinkCatName">If you had a pink cat what would its name be</label>
+      <input type="text" id="pinkCatName" required>
+
+      <label for="watchPinkPanther">Did you watch Pink Panther</label>
+      <input type="text" id="watchPinkPanther" required>
+
+      <label for="likePinkPantherSeries">Do you like the series Pink Panther</label>
+      <input type="text" id="likePinkPantherSeries" required>
+
+      <label for="handsomeWithPinkCat">Is someone considered as handsome when they own a pink cat</label>
+      <input type="text" id="handsomeWithPinkCat" required>
+
+      <label for="pinkCatSupremacy">Is pink cat supremacy above or below</label>
+      <input type="text" id="pinkCatSupremacy" required>
+
+      <label for="sigmaLikePinkCats">Are you sigma if you like pink cats</label>
+      <input type="text" id="sigmaLikePinkCats" required>
+
+      <button type="button" onclick="submitForm()">Done? Submit it NOW</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("pinkers").value = localStorage.getItem("firstName") || "";
+    document.getElementById("caters").value = localStorage.getItem("lastName") || "";
+    document.getElementById("lebonbon").value = localStorage.getItem("email") || "";
+    document.getElementById("cinnabon").value = localStorage.getItem("catName") || "";
+    document.getElementById("sandwitch").value = localStorage.getItem("favoriteCountry") || "";
+
+    function submitForm() {
+      var firstName = document.getElementById("pinkers").value;
+      var lastName = document.getElementById("caters").value;
+      var email = document.getElementById("lebonbon").value;
+      var catName = document.getElementById("cinnabon").value;
+      var favoriteCountry = document.getElementById("sandwitch").value;
+      var whyLikePinkCats = document.getElementById("whyLikePinkCats").value;
+      var likePinkCatsColor = document.getElementById("likePinkCatsColor").value;
+      var pinkCatLover = document.getElementById("pinkCatLover").value;
+      var pinkCatGoodPets = document.getElementById("pinkCatGoodPets").value;
+      var pinkCatName = document.getElementById("pinkCatName").value;
+      var watchPinkPanther = document.getElementById("watchPinkPanther").value;
+      var likePinkPantherSeries = document.getElementById("likePinkPantherSeries").value;
+      var handsomeWithPinkCat = document.getElementById("handsomeWithPinkCat").value;
+      var pinkCatSupremacy = document.getElementById("pinkCatSupremacy").value;
+      var sigmaLikePinkCats = document.getElementById("sigmaLikePinkCats").value;
+
+      localStorage.setItem("firstName", firstName);
+      localStorage.setItem("lastName", lastName);
+      localStorage.setItem("email", email);
+      localStorage.setItem("catName", catName);
+      localStorage.setItem("favoriteCountry", favoriteCountry);
+      localStorage.setItem("whyLikePinkCats", whyLikePinkCats);
+      localStorage.setItem("likePinkCatsColor", likePinkCatsColor);
+      localStorage.setItem("pinkCatLover", pinkCatLover);
+      localStorage.setItem("pinkCatGoodPets", pinkCatGoodPets);
+      localStorage.setItem("pinkCatName", pinkCatName);
+      localStorage.setItem("watchPinkPanther", watchPinkPanther);
+      localStorage.setItem("likePinkPantherSeries", likePinkPantherSeries);
+      localStorage.setItem("handsomeWithPinkCat", handsomeWithPinkCat);
+      localStorage.setItem("pinkCatSupremacy", pinkCatSupremacy);
+      localStorage.setItem("sigmaLikePinkCats", sigmaLikePinkCats);
+
+      alert("Form submitted successfully!");
+    }
+  </script>
+</body>
+</html>
